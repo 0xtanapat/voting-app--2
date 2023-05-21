@@ -6,17 +6,16 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class Client {
-	static int eligible_voters = 0;
-	static int party_num = 0;
 	
 	public static void main(String args[]) {
 		String localhost = "127.0.0.1";
 		int port = 3000;
 		
+		int eligible_voters = 0;
+		int party_num = 0;
 		PromptFrame promptFrame = new PromptFrame();
-		
 		while (eligible_voters == 0 || party_num == 0) {
-			System.out.println("In while loop");
+			System.out.println("Waiting for the number of eligible voters and number of party...");
 			eligible_voters = promptFrame.getNumOfEligibleVoters();
 			party_num = promptFrame.getNumOfParty();
 		}
