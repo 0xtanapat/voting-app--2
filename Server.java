@@ -15,7 +15,6 @@ public class Server {
 		
 		try {
 			ServerSocket serverSocket = new ServerSocket(port);
-			serverSocket.setReuseAddress(true);
             System.out.println("Server started on port " + port + ". " + "Waiting for a client to connect...");
 
             Socket clientSocket = serverSocket.accept();
@@ -76,7 +75,7 @@ public class Server {
 		        
 		        int most_voted = 0;
 		        for (int i = 1; i < electionResults.length; i++) {
-		        	if (electionResults[i] > most_voted) {
+		        	if (electionResults[i] > electionResults[most_voted]) {
 		        		most_voted = i;
 		        	}
 		        }
