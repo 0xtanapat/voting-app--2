@@ -24,24 +24,33 @@ public class PromptFrame extends JFrame implements ActionListener {
 	private int party_num;
 	
 	public PromptFrame() {
+		JLabel label = new JLabel();
+		label.setText("Number of eligible voters");
+		
+		JLabel label1 = new JLabel();
+		label1.setText("Number of party");
+		
         textField = new JTextField();
         textField.setPreferredSize(new Dimension(250, 40));
-        add(textField);
         
         textField1 = new JTextField();
         textField1.setPreferredSize(new Dimension(250, 40));
-        add(textField1);
         
         btn = new JButton("Submit");
         btn.addActionListener(this);
+        
+        add(label);
+        add(textField);
+        add(label1);
+        add(textField1);
         add(btn);
         
         pack();
         setTitle("Enter the numbers");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-        setSize(640, 640);
-        setLayout(new FlowLayout());
+        setSize(400, 300);
+        setLayout(new GridLayout(5, 1, 20, 10));
         setVisible(true);
 	}
 
